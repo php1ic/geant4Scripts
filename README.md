@@ -15,7 +15,7 @@ There is also the ability to create sub-installs for each version. One builds th
 
 The default geant4 build options and install paths used in the scripts are those that work for my scenario and usage needs, I strongly recommend that you check what values are used and read the [options on the installation webpage](https://geant4.web.cern.ch/geant4/UserDocumentation/UsersGuides/InstallationGuide/html/ch02s03.html) to tailor the script to your needs.
 
-## [create\\_geant\\_cmake.sh](create_geant_cmake.sh)
+## [create\_geant\_cmake.sh](create_geant_cmake.sh)
 
 This script creates the full cmake command, taking 3 options for the **version number**, the **build type** and the **path to the source code**. It does **NOT** run the final cmake command.
 
@@ -29,8 +29,8 @@ $ ./create_geant_cmake.sh
 
 The root path of the install is set on [line 19](create_geant_cmake.sh#L19), with the default being */usr/local/share/geant4*. The data directory path is constructed from this root path on [line 21](create_geant_cmake.sh#L19) so running with the default settings would require super-user privilages to build and install.
 
-## [run\\_geant\\_cmake.sh](run_geant_cmake.sh)
+## [run\_geant\_cmake.sh](run_geant_cmake.sh)
 
-This script runs the cmake command file passed as an argument, i.e. the one created and output by [create\\_geant\\_cmake.sh](create_geant_cmake.sh). If any data sets are missing, it checks that the user has permissions to write to the directory used to store the data, then downloads and extracts any that are required.
+This script runs the cmake command file passed as an argument, i.e. the one created and output by [create\_geant\_cmake.sh](create_geant_cmake.sh). If any data sets are missing, it checks that the user has permissions to write to the directory used to store the data, then downloads and extracts any that are required.
 
 Once this script successfully runs to completion, you are ready to build and install.
