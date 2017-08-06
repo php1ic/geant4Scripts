@@ -6,14 +6,14 @@ The [geant collaboration](http://geant4.cern.ch/) appear to have a fairly consis
 
 With each release, you either need to overwrite your current install (bad idea as core changes may break your simulation) or organise your system in such a way as to create parallel installs (better idea, but takes up more space) allowing easy roll back if required.
 
-The scripts were written assuming you want to go down the parallel installs route, and space by making all versions reference a common data directory. They automate and guarantee the following:
+The scripts were written assuming you want to go down the parallel installs route, and save space by making all versions reference a common data directory. They automate and guarantee the following:
 - The cmake build options are consistent across versions
 - A common directory heirarchy is followed
 - Missing data sets are automatically downloaded to the correct location
 
-There is also the ability to create sub-installs for each version. One builds the visualisation and some X11/Qt modules that can be used to create and craft your simulation, while the other is much more stripped down with non of the GUI modules built. Tests with a simple simulation showed a ~20% speed up of high statistics runs with the stripped down build. Although I have not had time to quantify how much of that is a result of the different CMAKE\\_BUILD\\_TYPE options and how much is down to the other parts that were or were not included.
+There is also the ability to create sub-installs for each version. One builds the visualisation and some X11/Qt modules that can be used to create and craft your simulation, while the other is much more stripped down with non of the GUI modules. Tests with a simple simulation showed a ~20% speed up of high statistics runs with the stripped down build. Although I have not had time to quantify how much of that is a result of the different CMAKE\\_BUILD\\_TYPE options and how much is down to the other parts that were or were not included.
 
-The default geant4 build options and install paths used in the scripts are those that work for my scenario and usage needs, I strongly recommend that you check what vlaues are used and read the [options on the installation webpage](https://geant4.web.cern.ch/geant4/UserDocumentation/UsersGuides/InstallationGuide/html/ch02s03.html) to tailor the script to your needs.
+The default geant4 build options and install paths used in the scripts are those that work for my scenario and usage needs, I strongly recommend that you check what values are used and read the [options on the installation webpage](https://geant4.web.cern.ch/geant4/UserDocumentation/UsersGuides/InstallationGuide/html/ch02s03.html) to tailor the script to your needs.
 
 ## [create\\_geant\\_cmake.sh](create_geant_cmake.sh)
 
@@ -27,7 +27,7 @@ $ ./create_geant_cmake.sh
 	USAGE:	create_geant_cmake.sh -v <geant4 version> -s <path to source> -b <release/debug>
 ```
 
-The root path of the install is set on [line 19](create_geant_cmake.sh#L19), with the default being */usr/local/share/geant4*. The data directory path is constructed from this root path on [line 21](create_geant_cmake.sh#L19) so running with the default setting would require super-user privilages to build and install.
+The root path of the install is set on [line 19](create_geant_cmake.sh#L19), with the default being */usr/local/share/geant4*. The data directory path is constructed from this root path on [line 21](create_geant_cmake.sh#L19) so running with the default settings would require super-user privilages to build and install.
 
 ## [run\\_geant\\_cmake.sh](run_geant_cmake.sh)
 
