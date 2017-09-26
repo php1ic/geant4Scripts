@@ -62,9 +62,9 @@ CMAKE_OUTPUT=cmake_output.log
 echo -e "${YELLOW}Running cmake${RESTORE}\n"
 
 #If cmake fails, we have bigger issues than missing data
-if ! ./${FILE} 2>&1 | tee ${CMAKE_OUTPUT}
+if ./${FILE} 2>&1 | tee ${CMAKE_OUTPUT}
 then
-    echo -e "${RED}\n\tERROR:${RESTORE}\tRunning cmake failed"
+    echo -e "${RED}\n\tERROR:${RESTORE}\tRunning cmake failed\n"
     exit 3
 fi
 
