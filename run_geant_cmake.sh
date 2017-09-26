@@ -62,7 +62,8 @@ CMAKE_OUTPUT=cmake_output.log
 echo -e "${YELLOW}Running cmake${RESTORE}\n"
 
 #If cmake fails, we have bigger issues than missing data
-if ./${FILE} 2>&1 | tee ${CMAKE_OUTPUT}
+./${FILE} 2>&1 | tee ${CMAKE_OUTPUT}
+if [[ ${PIPESTATUS[0]} -ne 0 ]]
 then
     echo -e "${RED}\n\tERROR:${RESTORE}\tRunning cmake failed\n"
     exit 3
