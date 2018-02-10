@@ -81,6 +81,19 @@ then
 else
     echo -en "\n${YELLOW}Data files are missing "
 
+    if [[ ! -d ${DATADIR} ]]
+    then
+        echo -en "\n**WARNING**: The data directory (${DATADIR}) does not exist creating now"
+
+        if [[ ! -w ${DATADIR}/.. ]]
+        then
+            echo -e "${RED}\n\tERROR:${RESTORE} You don't have permission to write to ${DATADIR}/.. , exiting...\n${RESTORE}"
+            exit 5
+        fi
+
+        mkdir -pv "${DATADIR}"
+    fi
+
     if [[ ! -w ${DATADIR} ]]
     then
         echo -e "${YELLOW}but you don't have permission to write to ${DATADIR}, exiting...\n${RESTORE}"
