@@ -160,7 +160,7 @@ Creating cmake command using the details
 geant4 version         - ${GREEN}${VERSION}${RESTORE}
 geant4 build type      - ${GREEN}${BUILD_LEVEL}${RESTORE}
 root install directory - ${GREEN}${INSTALLDIR}/${VERSION}/install/${BUILD_LEVEL}${RESTORE}
-geant4 data directory  - ${GREEN}${INSTALLDIR}/data${RESTORE}
+geant4 data directory  - ${GREEN}${DATAPATH}${RESTORE}
 source code directory  - ${GREEN}${SOURCE}${RESTORE}
 =========================
 "
