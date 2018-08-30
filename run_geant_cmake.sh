@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/env bash
 
 #####################
 #
@@ -18,7 +18,7 @@ YELLOW="\e[33m"
 
 usage() {
     echo -e "
-\t${BLUE}USAGE:${RESTORE}\t${0##*/} -f <cmake command file>
+\t${BLUE}USAGE:${RESTORE}\t${BASH_SOURCE##*/} -f <cmake command file>
 "
     exit 1
 }

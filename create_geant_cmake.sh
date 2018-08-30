@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/env bash
 
 #####################
 #
@@ -51,7 +51,7 @@ YELLOW="\e[33m"
 
 usage() {
     echo -e "
-\t${BLUE}USAGE:${RESTORE}\t${0##*/} -v <geant4 version> -s <path to source> -b <release/debug>
+\t${BLUE}USAGE:${RESTORE}\t${BASH_SOURCE##*/} -v <geant4 version> -s <path to source> -b <release/debug>
 "
     exit 1
 }
