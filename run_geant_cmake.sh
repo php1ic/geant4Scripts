@@ -106,7 +106,7 @@ fi
 #Store the url(s) of the missing datasets
 FILE_LIST=${DATADIR}/filesToGet.txt
 #The regex for missing data sets
-FILE_STRING="http://.*\.tar\.gz"
+FILE_STRING="http[s?]://.*\.tar\.gz"
 
 #Get which data files are missing.
 sed -n "s|^[ \t]*\(${FILE_STRING}\)|\1|p" ${CMAKE_OUTPUT} > ${FILE_LIST}
